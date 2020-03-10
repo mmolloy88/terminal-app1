@@ -15,8 +15,9 @@ pastel = Pastel.new
 print TTY::Box.frame("
 Welcome to the terminal diary!
 
-note: this is for subjective use, you can choose to
-share your thoughts if you'd like!!")
+note: this is an ANTI-social media app, for
+subjective use, you can choose to share your
+thoughts if you'd like!!")
 
 
 pastel.blue(prompt.keypress("Press space to continue
@@ -42,11 +43,28 @@ prompt.keypress(
 "Press space to continue", 
 keys: [:space])
 
-
+def scale(input)
 
     prompt.ask("
         On a scale of 1 - 10 how would you rate you day? 
-        ")
+        ").to_i
+       
+
+            if gets.chomp prompt.ask >= 7
+                print "That's great"
+                # if response is 7 or greater return a simple "that's great"
+                # before next step
+            elsif gets.chomp prompt.ask < 3
+                print "perhaps it would be better to speak with your family or a professional"
+                # if the response is lower than 3, suggest that maybe the user
+                # should speak to family, friends or a professional
+            
+            else print "that's good to hear"
+                # if the response is between 4 and 7, put "you're doing ok"
+       
+            end
+end
+
 
 
 
