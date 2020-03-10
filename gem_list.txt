@@ -1,6 +1,6 @@
 GEMS :
 
-colorize
+pastel
 tty prompt
 tty-box
 rubocop
