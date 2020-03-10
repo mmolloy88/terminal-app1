@@ -5,6 +5,7 @@ require "tty-box"
 prompt = TTY::Prompt.new(enable_color: true)
 pastel = Pastel.new
 
+diary_entry = true
 
     def diary_entry
 
@@ -50,11 +51,11 @@ def scale(input)
         ").to_i
        
 
-            if gets.chomp prompt.ask >= 7
+            if gets.chomp >= 7
                 print "That's great"
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
-            elsif gets.chomp prompt.ask < 3
+            elsif gets.chomp < 3
                 print "perhaps it would be better to speak with your family or a professional"
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
@@ -63,10 +64,27 @@ def scale(input)
                 # if the response is between 4 and 7, put "you're doing ok"
        
             end
+
+        
 end
 
+scale(input)
+
+# return here if the user chooses to write another entry
+
+# print "thank you for your response, would you like to
+#         write about your day? it can be a word or 2, or 
+#         a full on essay, no pressure: "
 
 
+
+# prompt.ask
+
+# prompt.ask "Would you like to write another entry? (y/n): "
+#     input = gets.chomp
+#     if input != "y"
+#         diary_entry = false
+#     end
 
 
 
