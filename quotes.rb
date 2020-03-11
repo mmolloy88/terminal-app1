@@ -6,6 +6,10 @@ class Quotes
         @string = string
         @author = author
     end
+
+    def quote_str
+        return "#{string} - #{author}."
+    end
 end
 
 Quotes_list = [
@@ -15,4 +19,3 @@ Quotes.new("Never bend your head. Always hold it high. Look the world straight i
 Quotes.new("What you get by achieving your goals is not as important as what you become by achieving your goals.", "Zig Ziglar"),
 Quotes.new("Believe you can and you're halfway there.", "Theodore Roosevelt")
 ]
-

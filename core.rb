@@ -73,7 +73,7 @@ while(diary_entry == true)
 
 entry = gets.chomp
 
-Quotes_list.sample
+p Quotes_list.sample.quote_str
 
 
 puts "Would you like to write another entry? "
