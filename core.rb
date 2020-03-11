@@ -10,7 +10,6 @@ pastel = Pastel.new
 diary_entry = true
 
 
-
 print TTY::Box.frame("
 Welcome to the terminal diary!
 
