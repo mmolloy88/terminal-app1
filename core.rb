@@ -1,6 +1,8 @@
 require "pastel"
 require "tty-prompt"
 require "tty-box"
+require "./quotes.rb"
+
 
 prompt = TTY::Prompt.new(enable_color: true)
 pastel = Pastel.new
@@ -72,12 +74,14 @@ while(diary_entry == true)
 
 entry = gets.chomp
 
+Quotes_list.sample
 
 
-# diary_entry = prompt.ask("
-#     would you like to make another entry? ")
-
-#         if diary_entry = "y"
+puts "Would you like to write another entry? "
+    input = gets.chomp
+    if input != "y"
+        diary_entry = false
+    end
 
 end
 
