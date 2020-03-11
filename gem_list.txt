@@ -3,4 +3,4 @@ GEMS :
 pastel
 tty prompt
 tty-box
-rubocop
+geolocation

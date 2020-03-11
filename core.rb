@@ -15,7 +15,7 @@ Welcome to the terminal diary!
 note: this is an ANTI-social media app, for
 subjective use, you can choose to share your
 thoughts if you'd like, but you don't
-have!!")
+have to!!")
 
 
 prompt.keypress("Press space to continue
@@ -44,7 +44,9 @@ prompt.keypress(
 keys: [:space])
 
 input = prompt.ask("
-On a scale of 1 - 10 how would you rate you day? 
+On a scale of 1 - 10 how would you rate you day?
+
+1 being a bad day & 10 being a great one:
 ").to_i
 
             if input >= 11
@@ -73,18 +75,14 @@ while(diary_entry == true)
             
         no pressure: ")
 
-entry = gets.chomp
-
-puts (Quotes_list.sample.quote_str)
+entry = gets
 
 
 summary = pastel.yellow"to summerise: "
 
-print TTY::Box.frame("did you focus on yourself today: #{u_time} ")
-print TTY::Box.frame("was today stressful: #{u_stress} ")
-print TTY::Box.frame("do you feel accomplished: #{u_goal}")
-print TTY::Box.frame("this was your day rating: #{input}")
-print TTY::Box.frame("and this was your entry: #{entry}")
+
+
+puts (Quotes_list.sample.quote_str)
 
 File.open("previous-entries.txt", "r+") do |file|
     file.write("")
