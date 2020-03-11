@@ -1,13 +1,12 @@
 require "pastel"
 require "tty-prompt"
 require "tty-box"
-require "./quotes.rb"
+require "./classes.rb"
 
 prompt = TTY::Prompt.new(enable_color: true)
 pastel = Pastel.new
-
 diary_entry = true
-
+summary = Summary.new
 
 print TTY::Box.frame("
 Welcome to the terminal diary!
@@ -22,40 +21,34 @@ prompt.keypress("Press space to continue
 ",
 keys: [:space],)
 
-print pastel.blue"We'll start with 3 basic yes or no questions.
+print pastel.blue"We'll start with 3 basic yes or no questions.\n
 "
 
 # save entries to the below responses
 
-    u_time = prompt.yes?(
-        "Did you put aside enough time for yourself today? ")
+    summary.u_time = prompt.yes?(pastel.yellow"Did you put aside enough time for yourself today?")
 
-    u_stress = prompt.yes?(
-        "Was today a stressful day? ")
+    summary.u_stress = prompt.yes?(pastel.yellow"Was today a stressful day? ")
 
-    u_goal = prompt.yes?(
-        "Did you accomplish what you wanted today? ")
+    summary.u_goal = prompt.yes?(pastel.yellow"Did you accomplish what you wanted today? ")
 
-puts pastel.blue "thank you for your feedback!
-                "
+puts pastel.blue "\n thank you for your feedback!\n"
 
 prompt.keypress(
 "Press space to continue", 
 keys: [:space])
 
-input = prompt.ask("
-On a scale of 1 - 10 how would you rate you day?
+summary.input = prompt.ask(pastel.blue"On a scale of 1 - 10 how would you rate you day?
 
-1 being a bad day & 10 being a great one:
-").to_i
+1 being a bad day & 10 being a great one:").to_i
 
-            if input >= 11
+            if summary.input >= 11
                 puts "you must be having a really great day!!"
-            elsif input >= 7
+            elsif summary.input >= 7
                 puts "That's great!! "
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
-            elsif input <= 3
+            elsif summary.input <= 3
                 puts "perhaps it would be better to speak with your family or a professional "
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
@@ -67,25 +60,23 @@ On a scale of 1 - 10 how would you rate you day?
 # return here if the user chooses to write another entry
 while(diary_entry == true)
 
-    print TTY::Box.frame("
-        thank you for your responses, 
-        would you like to write about
-        your day? it can be a word or 
-        2, or a full on essay,
+    print TTY::Box.frame(pastel.blue"
+    thank you for your responses,  
+    would you like to write about  
+    your day? it can be a word or  
+    2, or a full on essay,        
             
-        no pressure: ")
+    no pressure:")
 
-entry = gets
-
-
-summary = pastel.yellow"to summerise: "
+summary.entry = gets
 
 
+puts summary.to_s
 
 puts (Quotes_list.sample.quote_str)
 
 File.open("previous-entries.txt", "r+") do |file|
-    file.write("")
+    file.write(summary.to_s)
 end
 
 puts pastel.blue "Would you like to write another entry? (yes/no)"

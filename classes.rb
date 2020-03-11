@@ -1,3 +1,4 @@
+# require "./core.rb"
 
 class Quotes
     attr_accessor :string, :author
@@ -19,3 +20,23 @@ Quotes.new("Never bend your head. Always hold it high. Look the world straight i
 Quotes.new("What you get by achieving your goals is not as important as what you become by achieving your goals.", "Zig Ziglar"),
 Quotes.new("Believe you can and you're halfway there.", "Theodore Roosevelt")
 ]
+
+
+
+class Summary
+    attr_accessor :u_time, :u_stress, :u_goal, :input, :entry
+
+    def to_s 
+        return ("to summarise: \n\n") +
+        ("did you focus on yourself today: #{u_time}\n") +
+        ("was today stressful: #{u_stress}\n")+
+        ("do you feel accomplished: #{u_goal}\n")+
+        ("this was your day rating: #{input}\n")+
+        ("and this was your entry: #{entry}")
+    end
+
+end
+
+
+
+
