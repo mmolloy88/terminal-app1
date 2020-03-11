@@ -9,7 +9,12 @@ GETTING STARTED: running the app
 
 TESTING:
 
+
+
 AUTHOR:
 
 M. Molloy
 
+ACKNOWLEGMENTS:
+
+goodhousekeeping.com for the quotes
