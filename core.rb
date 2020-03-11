@@ -3,7 +3,6 @@ require "tty-prompt"
 require "tty-box"
 require "./quotes.rb"
 
-
 prompt = TTY::Prompt.new(enable_color: true)
 pastel = Pastel.new
 
@@ -15,7 +14,8 @@ Welcome to the terminal diary!
 
 note: this is an ANTI-social media app, for
 subjective use, you can choose to share your
-thoughts if you'd like!!")
+thoughts if you'd like, but you don't
+have!!")
 
 
 prompt.keypress("Press space to continue
@@ -27,20 +27,17 @@ print pastel.blue"We'll start with 3 basic yes or no questions.
 
 # save entries to the below responses
 
-# y_or_n = prompt.yes?
-
-    prompt.yes?(
+    u_time = prompt.yes?(
         "Did you put aside enough time for yourself today? ")
 
-    prompt.yes?(
+    u_stress = prompt.yes?(
         "Was today a stressful day? ")
 
-    prompt.yes?(
+    u_goal = prompt.yes?(
         "Did you accomplish what you wanted today? ")
 
 puts pastel.blue "thank you for your feedback!
                 "
-
 
 prompt.keypress(
 "Press space to continue", 
@@ -56,7 +53,7 @@ On a scale of 1 - 10 how would you rate you day?
                 puts "That's great!! "
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
-            elsif input < 3
+            elsif input <= 3
                 puts "perhaps it would be better to speak with your family or a professional "
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
@@ -65,19 +62,33 @@ On a scale of 1 - 10 how would you rate you day?
        
             end
 
-
 # return here if the user chooses to write another entry
 while(diary_entry == true)
 
-    print TTY::Box.frame(
-        "thank you for your responses, would you like to
-            write about your day? it can be a word or 2, or 
-            a full on essay, no pressure: ")
+    print TTY::Box.frame("
+        thank you for your responses, 
+        would you like to write about
+        your day? it can be a word or 
+        2, or a full on essay,
+            
+        no pressure: ")
 
 entry = gets.chomp
 
-p (Quotes_list.sample.quote_str)
+puts (Quotes_list.sample.quote_str)
 
+
+summary = pastel.yellow"to summerise: "
+
+print TTY::Box.frame("did you focus on yourself today: #{u_time} ")
+print TTY::Box.frame("was today stressful: #{u_stress} ")
+print TTY::Box.frame("do you feel accomplished: #{u_goal}")
+print TTY::Box.frame("this was your day rating: #{input}")
+print TTY::Box.frame("and this was your entry: #{entry}")
+
+File.open("previous-entries.txt", "r+") do |file|
+    file.write("")
+end
 
 puts pastel.blue "Would you like to write another entry? (yes/no)"
     input = gets.chomp
