@@ -18,14 +18,16 @@ subjective use, you can choose to share your
 thoughts if you'd like!!")
 
 
-pastel.blue(prompt.keypress("Press space to continue
-", 
-keys: [:space],))
+prompt.keypress("Press space to continue
+",
+keys: [:space],)
 
 print pastel.blue"We'll start with 3 basic yes or no questions.
 "
 
 # save entries to the below responses
+
+# y_or_n = prompt.yes?
 
     prompt.yes?(
         "Did you put aside enough time for yourself today? ")
@@ -36,7 +38,8 @@ print pastel.blue"We'll start with 3 basic yes or no questions.
     prompt.yes?(
         "Did you accomplish what you wanted today? ")
 
-puts "thank you for your feedback!"
+puts pastel.blue "thank you for your feedback!
+                "
 
 
 prompt.keypress(
@@ -47,8 +50,9 @@ input = prompt.ask("
 On a scale of 1 - 10 how would you rate you day? 
 ").to_i
 
-
-            if input >= 7
+            if input >= 11
+                puts "you must be having a really great day!!"
+            elsif input >= 7
                 puts "That's great!! "
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
@@ -56,7 +60,6 @@ On a scale of 1 - 10 how would you rate you day?
                 puts "perhaps it would be better to speak with your family or a professional "
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
-            
             else puts "that's good to hear "
                 # if the response is between 4 and 7, put "you're doing ok"
        
@@ -73,10 +76,10 @@ while(diary_entry == true)
 
 entry = gets.chomp
 
-p Quotes_list.sample.quote_str
+p (Quotes_list.sample.quote_str)
 
 
-puts "Would you like to write another entry? "
+puts pastel.blue "Would you like to write another entry? (yes/no)"
     input = gets.chomp
     if input != "y"
         diary_entry = false
