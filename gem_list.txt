@@ -1,6 +1,0 @@
-GEMS :
-
-pastel
-tty prompt
-tty-box
-geolocation

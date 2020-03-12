@@ -8,18 +8,18 @@ pastel = Pastel.new
 diary_entry = true
 summary = Summary.new
 
-print TTY::Box.frame("
-Welcome to the terminal diary!
+# width: 30, height: 10, align: :center) do
 
-note: this is an ANTI-social media app, for
-subjective use, you can choose to share your
-thoughts if you'd like, but you don't
-have to!!")
+box = TTY::Box.frame(width:50, height:13, align: :center, title: {top_left: 'TERMINAL DIARY', bottom_right: '++++'}) do "\nWelcome to the terminal diary!\n 
+    note: this is an ANTI-social media app, for subjective use,\n 
+    you can choose to share your thoughts if you'd like,\n\n 
+    but you don't have to!!"
 
+end
 
-prompt.keypress("Press space to continue
-",
-keys: [:space],)
+print pastel.yellow box
+
+prompt.keypress("Press space to continue\n", keys: [:space],)
 
 print pastel.blue"We'll start with 3 basic yes or no questions.\n
 "
@@ -34,25 +34,23 @@ print pastel.blue"We'll start with 3 basic yes or no questions.\n
 
 puts pastel.blue "\n thank you for your feedback!\n"
 
-prompt.keypress(
-"Press space to continue", 
-keys: [:space])
+prompt.keypress("Press space to continue\n\n", keys: [:space])
 
 summary.input = prompt.ask(pastel.blue"On a scale of 1 - 10 how would you rate you day?
 
 1 being a bad day & 10 being a great one:").to_i
 
             if summary.input >= 11
-                puts "you must be having a really great day!!"
+                puts "you must be having a really great day!! \n"
             elsif summary.input >= 7
-                puts "That's great!! "
+                puts "That's great!! \n"
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
             elsif summary.input <= 3
-                puts "perhaps it would be better to speak with your family or a professional "
+                puts "perhaps it would be better to speak with your family or a professional \n"
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
-            else puts "that's good to hear "
+            else puts "that's good to hear \n"
                 # if the response is between 4 and 7, put "you're doing ok"
        
             end
@@ -60,13 +58,14 @@ summary.input = prompt.ask(pastel.blue"On a scale of 1 - 10 how would you rate y
 # return here if the user chooses to write another entry
 while(diary_entry == true)
 
-    print TTY::Box.frame(pastel.blue"
-    thank you for your responses,  
-    would you like to write about  
-    your day? it can be a word or  
-    2, or a full on essay,        
-            
-    no pressure:")
+box2 = TTY::Box.frame(width: 39, height: 12, align: :center, padding: 1, title: {bottom_right: '++++'}) do pastel.blue"thank you for your responses,\n  
+    would you like to write about \n 
+    your day? it can be a word or \n
+    2, or a full on essay,\n        
+    no pressure: "
+end
+
+print pastel.yellow box2
 
 summary.entry = gets
 
@@ -79,7 +78,7 @@ File.open("previous-entries.txt", "r+") do |file|
     file.write(summary.to_s)
 end
 
-puts pastel.blue "Would you like to write another entry? (yes/no)"
+puts pastel.blue "\nWould you like to write another entry? (yes/no)"
     input = gets.chomp
     if input != "y"
         diary_entry = false

@@ -5,6 +5,13 @@ This is an application that will allow you to write a diary, it checks in with h
 
 HOW TO INSTALL: 
 
+GEMS USED:
+
+    pastel
+    tty prompt
+    tty-box
+    geolocation
+
 GETTING STARTED: running the app
 
 TESTING:

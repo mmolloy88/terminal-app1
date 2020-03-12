@@ -3,5 +3,6 @@ to summarise:
 did you focus on yourself today: true
 was today stressful: true
 do you feel accomplished: true
-this was your day rating: 5
-and this was your entry: goodbye
+this was your day rating: 6
+and this was your entry: n
+llo
