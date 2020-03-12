@@ -1,4 +1,6 @@
-# require "./core.rb"
+# require "pastel"
+
+# pastel = Pastel.new
 
 class Quotes
     attr_accessor :string, :author
@@ -32,7 +34,7 @@ class Summary
         ("was today stressful: #{u_stress}\n")+
         ("do you feel accomplished: #{u_goal}\n")+
         ("this was your day rating: #{input}\n")+
-        ("and this was your entry: #{entry}")
+        ("and this was your entry: #{entry}\n\n")
     end
 
 end

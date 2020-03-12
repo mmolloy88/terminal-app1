@@ -72,10 +72,11 @@ summary.entry = gets
 
 puts summary.to_s
 
-puts (Quotes_list.sample.quote_str)
+
 
 File.open("previous-entries.txt", "r+") do |file|
     file.write(summary.to_s)
+    puts (Quotes_list.sample.quote_str)
 end
 
 puts pastel.blue "\nWould you like to write another entry? (yes/no)"
