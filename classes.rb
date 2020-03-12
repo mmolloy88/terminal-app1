@@ -1,6 +1,3 @@
-# require "pastel"
-
-# pastel = Pastel.new
 
 class Quotes
     attr_accessor :string, :author
@@ -23,8 +20,6 @@ Quotes.new("What you get by achieving your goals is not as important as what you
 Quotes.new("Believe you can and you're halfway there.", "Theodore Roosevelt")
 ]
 
-
-
 class Summary
     attr_accessor :u_time, :u_stress, :u_goal, :input, :entry
 
@@ -38,7 +33,4 @@ class Summary
     end
 
 end
-
-
-
 

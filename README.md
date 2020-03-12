@@ -1,9 +1,11 @@
 
 TERMINAL APP 1: Terminal diary
 
+OVERVIEW:
+
 The Terminal diary is an ANTI-social media app, for people who want to write about there experience, but don't know who to talk to and don't want to blast there opinions out in to the ether like so many social media applications do.
 
-It checks in with how your day was/is going starting with 3 simple yes or no questions, then asking for a 1 - 10 rating and then prompting you to make an entry. Write down anything you want, or split whatever's on your mind over multiple entries. At the end of your entry in the previous-entries.txt file an inspirational quote will also be generated.
+It checks in with how your day was/is going starting with 3 simple yes or no questions, then asking for a 1 - 10 rating and then prompting you to make a diary entry. Write down anything you want, or split whatever's on your mind over multiple entries. At the end of your entry in the previous-entries.txt file an inspirational quote will also be generated.
 
 
 FEATURES: 
@@ -40,9 +42,16 @@ GEMS USED: install the following gems to make sure the application will work smo
     tty-box
     Rubocop (this was used to check the code, not necessary to run Terminal diary)
 
-GETTING STARTED: running the app
+GETTING STARTED:
 
-once the the code has been cloned and the gems have been installed, run the core.rb file.
+once the the code has been cloned and the gems have been installed, run the core.rb file to start the app.
+
+TODO:
+
+increase pool of quotes
+add functionality that records time and date to each saved entry
+make macaroni art portrait to impress Bruce
+
 
 AUTHOR:
 M. Molloy

@@ -8,8 +8,6 @@ pastel = Pastel.new
 diary_entry = true
 summary = Summary.new
 
-# width: 30, height: 10, align: :center) do
-
 box = TTY::Box.frame(width:55, height:13, align: :center, title: {top_left: 'TERMINAL DIARY', bottom_right: '++++'}) do "\nWelcome to the terminal diary!\n 
     note: this is an ANTI-social media app, for subjective use,\n 
     you can choose to share your thoughts if you'd like,\n\n 
@@ -47,7 +45,10 @@ summary.input = prompt.ask(pastel.blue"On a scale of 1 - 10 how would you rate y
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
             elsif summary.input <= 3
-                puts "\nperhaps it would be better to speak with your family or a professional \n\n"
+                puts pastel.red TTY::Box.frame"   perhaps it would be better to speak with your family  
+    or a professional, if you are having a really tough 
+    time there's also organisations like beyond blue    
+    on 1300 22 4636 that are there to help \n "
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
             else puts "\nthat's good to hear \n\n"
@@ -85,6 +86,4 @@ puts pastel.blue "\nWould you like to write another entry? (yes/no)"
     end
 
 end
-
-
 
