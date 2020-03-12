@@ -10,10 +10,10 @@ summary = Summary.new
 
 # width: 30, height: 10, align: :center) do
 
-box = TTY::Box.frame(width:50, height:13, align: :center, title: {top_left: 'TERMINAL DIARY', bottom_right: '++++'}) do "\nWelcome to the terminal diary!\n 
+box = TTY::Box.frame(width:55, height:13, align: :center, title: {top_left: 'TERMINAL DIARY', bottom_right: '++++'}) do "\nWelcome to the terminal diary!\n 
     note: this is an ANTI-social media app, for subjective use,\n 
     you can choose to share your thoughts if you'd like,\n\n 
-    but you don't have to!!"
+    but you don't have to!!" 
 
 end
 
@@ -38,19 +38,19 @@ prompt.keypress("Press space to continue\n\n", keys: [:space])
 
 summary.input = prompt.ask(pastel.blue"On a scale of 1 - 10 how would you rate you day?
 
-1 being a bad day & 10 being a great one:").to_i
+ 1 being a bad day & 10 being a great one: ").to_i
 
             if summary.input >= 11
-                puts "you must be having a really great day!! \n"
+                puts "\nyou must be having a really great day!! \n\n"
             elsif summary.input >= 7
-                puts "That's great!! \n"
+                puts "\nThat's great!! \n\n"
                 # if response is 7 or greater return a simple "that's great"
                 # before next step
             elsif summary.input <= 3
-                puts "perhaps it would be better to speak with your family or a professional \n"
+                puts "\nperhaps it would be better to speak with your family or a professional \n\n"
                 # if the response is lower than 3, suggest that maybe the user
                 # should speak to family, friends or a professional
-            else puts "that's good to hear \n"
+            else puts "\nthat's good to hear \n\n"
                 # if the response is between 4 and 7, put "you're doing ok"
        
             end
@@ -80,7 +80,7 @@ end
 
 puts pastel.blue "\nWould you like to write another entry? (yes/no)"
     input = gets.chomp
-    if input != "y"
+    if input != "yes"
         diary_entry = false
     end
 

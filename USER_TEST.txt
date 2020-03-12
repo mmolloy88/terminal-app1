@@ -1,0 +1,23 @@
+test:
+    
+    1. run file - tested
+   result: run the core.rb through terminal
+
+   feedback: app is running, able to get through all stages of app without crashing
+   
+    2. testing input for each prompt
+    result:  put in the responses required
+
+    feedback:  responding to inputs correctly
+
+    3. check entry is saved to text file
+    result: run app, checked previous-entries.txt
+
+    feedback:
+
+    4. attempted incorrect inputs for prompts
+    result: responses are all recorded in the previous-entries.txt file, showing with the inspirational quote and each entry separated
+
+    feedback:
+    
+    5. 
