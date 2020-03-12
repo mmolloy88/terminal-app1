@@ -1,23 +1,34 @@
 test:
     
     1. run file - tested
+
    result: run the core.rb through terminal
 
    feedback: app is running, able to get through all stages of app without crashing
-   
+
+--------------------------------------------------------------------------------------
+
     2. testing input for each prompt
-    result:  put in the responses required
+
+    result:  entered other letters in the "yes or no" sections, app comes back with an
+    "incorrect input" response. 
+    
+    entering a number that is more than 10 for the day rating gives a "you must be 
+    having a really great day" response, entering a string returns "perhaps it would be
+    better to speak with your family or a professional"
 
     feedback:  responding to inputs correctly
+
+--------------------------------------------------------------------------------------
 
     3. check entry is saved to text file
     result: run app, checked previous-entries.txt
 
-    feedback:
+    feedback: all responses as well as the inspirational quote is appearing at the end of the document.
 
-    4. attempted incorrect inputs for prompts
-    result: responses are all recorded in the previous-entries.txt file, showing with the inspirational quote and each entry separated
+--------------------------------------------------------------------------------------
 
-    feedback:
+    4. 
     
-    5. 
+--------------------------------------------------------------------------------------
+
