@@ -56,7 +56,7 @@ summary.input = prompt.ask(pastel.blue"On a scale of 1 - 10 how would you rate y
             end
 
 # return here if the user chooses to write another entry
-while(diary_entry == true)
+while (diary_entry == true)
 
 box2 = TTY::Box.frame(width: 39, height: 12, align: :center, padding: 1, title: {bottom_right: '++++'}) do pastel.blue"thank you for your responses,\n  
     would you like to write about \n 
@@ -72,11 +72,10 @@ summary.entry = gets
 
 puts summary.to_s
 
-
-
-File.open("previous-entries.txt", "r+") do |file|
-    file.write(summary.to_s)
-    puts (Quotes_list.sample.quote_str)
+File.open("previous-entries.txt", "a") do |file|
+    file.write(
+        "#{summary.to_s}\n#{Quotes_list.sample.quote_str}\n\n---------------------------\n\n"
+    )
 end
 
 puts pastel.blue "\nWould you like to write another entry? (yes/no)"
