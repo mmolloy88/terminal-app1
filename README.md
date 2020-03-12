@@ -1,6 +1,11 @@
 
 TERMINAL APP 1: Terminal diary
 
+The Terminal diary is an ANTI-social media app, for people who want to write about there experience, but don't know who to talk to and don't want to blast there opinions out in to the ether like so many social media applications do.
+
+It checks in with how your day was/is going starting with 3 simple yes or no questions, then asking for a 1 - 10 rating and then prompting you to make an entry. Write down anything you want, or split whatever's on your mind over multiple entries. At the end of your entry in the previous-entries.txt file an inspirational quote will also be generated.
+
+
 FEATURES: 
 
 - 3 "yes or no" questions regarding:
@@ -8,10 +13,20 @@ FEATURES:
     * time management
     * goal orientation
 - rating for how your day is going 
+
+take an opportunity to think about your day, how it affected you. 
+
 - ability to write a diary entry
+
+write down how you're feeling, anything you want. whether it's a short sentence or a whole paragraph.
+
 - save the information to a text file on your PC 
 
-This is an application that will allow you to write a diary, it checks in with how your day was/is going starting with 3 simple yes or no questions, then asking for a 1 - 10 rating and then prompting you to make an entry. Write down anything you want, or split whatever's on your mind over multiple entries. at the end of your entry in the previous-entries.txt file an inspirational quote will also be generated.
+The entry is then saved to the previous-entries text file, allowing you to go back and take a look at everything you've put down.
+
+- add an inspirational quote to the end of every entry
+
+after the diary entry is filled out and entered an inspirational quote is added to the previous entries file
 
 
 HOW TO INSTALL: 
